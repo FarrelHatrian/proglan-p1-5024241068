@@ -30,6 +30,39 @@ public:
 };
 
 int main() {
+    int finnHealth, finnAttack;
+    int iceHealth, iceAttack;
+    std::string firstTurn;
 
-}
+    std::cin >> finnHealth >> finnAttack;
+    std::cin >> iceHealth >> iceAttack;
+    std::cin >> firstTurn;
+
+    Character finn("Finn", finnHealth, finnAttack);
+    Character iceKing("Ice King", iceHealth, iceAttack);
+
+    finn.printStatus();
+    iceKing.printStatus();
+
+    while (finn.isAlive() && iceKing.isAlive()) {
+        if (firstTurn == "finn") {
+            std::cout << "Finn attacks Ice King!\n";
+            finn.attack(iceKing);
+            iceKing.printStatus();
+            if (!iceKing.isAlive()) break;
+
+            std::cout << "Ice King attacks Finn!\n";
+            iceKing.attack(finn);
+            finn.printStatus();
+        } else {
+            std::cout << "Ice King attacks Finn!\n";
+            iceKing.attack(finn);
+            finn.printStatus();
+            if (!finn.isAlive()) break;
+
+            std::cout << "Finn attacks Ice King!\n";
+            finn.attack(iceKing);
+            iceKing.printStatus();
+        }
+    }
 
