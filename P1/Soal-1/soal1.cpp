@@ -28,7 +28,6 @@ public:
         else return 0;
     }
 
-    // Menampilkan informasi pembalap
     void printInfo() {
         std::cout << nama << " skor nya " << point << std::endl;
     }
