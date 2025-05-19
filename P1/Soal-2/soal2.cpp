@@ -66,3 +66,11 @@ int main() {
         }
     }
 
+    if (finn.isAlive()) {
+        std::cout << "Finn wins the battle!\n";
+    } else {
+        std::cout << "Ice King wins the battle!\n";
+    }
+
+    return 0;
+}
