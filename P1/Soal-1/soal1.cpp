@@ -8,13 +8,31 @@ private:
     float point;
 
 public:
-    PembalapF1( ... ) {
+    // Constructor sesuai parameter dari main
+    PembalapF1(std::string n, int p) {
+        nama = n;
+        posisi = p;
+        point = hitungPoint(posisi);
     }
 
+    // Menghitung point sesuai posisi
     float hitungPoint(int posisi) {
+        if (posisi == 1) return 25;
+        else if (posisi == 2) return 18;
+        else if (posisi == 3) return 15;
+        else if (posisi == 4) return 12;
+        else if (posisi == 5) return 10;
+        else if (posisi == 6) return 8;
+        else if (posisi == 7) return 6;
+        else if (posisi == 8) return 4;
+        else if (posisi == 9) return 2;
+        else if (posisi == 10) return 1;
+        else return 0;
     }
 
+    // Menampilkan informasi pembalap
     void printInfo() {
+        std::cout << nama << " skor nya " << point << std::endl;
     }
 };
 
@@ -37,5 +55,7 @@ int main() {
         pembalap[i]->printInfo();
         delete pembalap[i];
     }
+
+    delete[] pembalap;
     return 0;
 }
