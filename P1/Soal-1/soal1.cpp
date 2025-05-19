@@ -8,14 +8,12 @@ private:
     float point;
 
 public:
-    // Constructor sesuai parameter dari main
     PembalapF1(std::string n, int p) {
         nama = n;
         posisi = p;
         point = hitungPoint(posisi);
     }
 
-    // Menghitung point sesuai posisi
     float hitungPoint(int posisi) {
         if (posisi == 1) return 25;
         else if (posisi == 2) return 18;
